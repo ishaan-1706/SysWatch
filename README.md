@@ -125,6 +125,38 @@ sqlite3 "$env:APPDATA\NotificationAggregator\notifications.db" "SELECT COUNT(*) 
 - `notifications.db` - SQLite database with all collected events
 - `config.json` - Service configuration
 
+### Automated Daily Summary (Optional)
+
+Get a complete report of your SysWatch status, logs, and statistics every day.
+
+**View Summary Now**
+```powershell
+.\scripts\view-summary.ps1
+```
+
+**Schedule Daily Report**
+```powershell
+# Run as Administrator - schedules report for 5 PM daily
+.\scripts\schedule-daily-summary.ps1 -Time "17:00"
+
+# Custom time (midnight)
+.\scripts\schedule-daily-summary.ps1 -Time "00:00" -TaskName "SysWatchMidnightReport"
+```
+
+Reports are saved to: `%APPDATA%\NotificationAggregator\reports\daily-summary-YYYY-MM-DD.txt`
+
+**Manage Scheduled Task**
+```powershell
+# View all reports
+Get-ChildItem "$env:APPDATA\NotificationAggregator\reports\"
+
+# Run task now
+Start-ScheduledTask -TaskName "SysWatchDailySummary"
+
+# Remove task
+Unregister-ScheduledTask -TaskName "SysWatchDailySummary" -Confirm:$false
+```
+
 ## Architecture
 
 ```
