@@ -98,6 +98,33 @@ INSERT INTO NotificationFilters
 VALUES (NULL, 'Suppress Info', '*', '*', '*', 0, 0, '', 1, CURRENT_TIMESTAMP);
 ```
 
+### Viewing Logs & Data
+
+All data is stored in `%APPDATA%\NotificationAggregator\` (typically `C:\Users\YourUsername\AppData\Roaming\NotificationAggregator\`)
+
+**View Logs**
+```powershell
+# Show last 50 lines of today's log
+Get-Content "$env:APPDATA\NotificationAggregator\logs-*.txt" -Tail 50
+
+# Open log file directly
+Invoke-Item "$env:APPDATA\NotificationAggregator"
+```
+
+**Query Database**
+```powershell
+# Count notifications by severity
+python "C:\path\to\SysWatch\scripts\query-db.py"
+
+# Or use sqlite3 directly (if installed)
+sqlite3 "$env:APPDATA\NotificationAggregator\notifications.db" "SELECT COUNT(*) FROM Notifications;"
+```
+
+**Files Created**
+- `logs-YYYY-MM-DD.txt` - Daily rotating logs (30 days retention)
+- `notifications.db` - SQLite database with all collected events
+- `config.json` - Service configuration
+
 ## Architecture
 
 ```
