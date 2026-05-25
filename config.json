@@ -1,0 +1,11 @@
+{
+  "windows-eventlog": {
+    "enabled": "true",
+    "logs": "Application;System;Security"
+  },
+  "custom-api": {
+    "enabled": "false",
+    "webhookUrl": "",
+    "apiKey": ""
+  }
+}

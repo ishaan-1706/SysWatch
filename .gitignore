@@ -1,0 +1,72 @@
+# Build artifacts
+bin/
+obj/
+publish/
+.vs/
+out/
+build/
+dist/
+target/
+
+# Logs
+logs*/
+
+# Database
+*.db
+*.db-journal
+
+# Environment
+.env
+.env.local
+
+# IDE
+*.user
+*.suo
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Web placeholders
+web/
+
+# Internal/temporary files
+GITHUB_CHECKLIST.md
+notification.md
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (if added later)
+node_modules/
+
+# Coverage
+coverage/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Build
+out/
+build/
+dist/
+target/
+
+# Temp
+tmp/
+temp/
+*.tmp
+*.temp

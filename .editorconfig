@@ -1,0 +1,23 @@
+root = true
+
+[*.cs]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+insert_final_newline = true
+charset = utf-8
+
+# Code style rules
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_else = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_open_brace = all
+csharp_prefer_braces = true:suggestion
+csharp_space_after_cast = false
+csharp_space_after_keywords_in_control_flow_statements = true
+
+[*.{json,xml,yaml,yml,csproj}]
+indent_style = space
+indent_size = 2
